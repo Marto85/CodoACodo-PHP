@@ -1,0 +1,11 @@
+.highlights {
+    font-size: 12px;
+}
+
+.line-title {
+    width: 130px;
+    background: #b100ff;
+    height: 6px;
+    border: none;
+    text-emphasis-color: #F404FF ;
+}
