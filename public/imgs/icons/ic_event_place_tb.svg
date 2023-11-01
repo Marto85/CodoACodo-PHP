@@ -1,0 +1,9 @@
+<svg id="ic_place" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Grupo_17842" data-name="Grupo 17842" transform="translate(-1061 -376)">
+    <rect id="Rectángulo_8493" data-name="Rectángulo 8493" width="25" height="25" transform="translate(1069 384)" fill="none"/>
+    <g id="marcador-de-posicion-en-papel-de-mapa-en-perspectiva" transform="translate(1069.001 320.414)">
+      <path id="Trazado_66073" data-name="Trazado 66073" d="M21.091,77.653l3.849,7.908a.375.375,0,0,1-.366.585H.424a.375.375,0,0,1-.366-.585l3.849-7.908a.446.446,0,0,1,.366-.229h3.3a.462.462,0,0,1,.306.141c.224.259.452.512.679.762s.433.478.649.724H5.291a.446.446,0,0,0-.366.229l-2.55,5.239H22.623l-2.55-5.239a.446.446,0,0,0-.366-.229H15.782c.215-.246.433-.487.649-.724s.458-.5.682-.762a.462.462,0,0,1,.305-.14h3.308A.446.446,0,0,1,21.091,77.653Zm-2.932-5.4c0,4.321-3.6,5.131-5.289,9.284a.4.4,0,0,1-.75,0c-1.526-3.744-4.6-4.771-5.19-8.106a5.786,5.786,0,0,1,5.013-6.814A5.665,5.665,0,0,1,18.159,72.249Zm-2.673,0A2.991,2.991,0,1,0,12.5,75.24,2.991,2.991,0,0,0,15.486,72.249Z" transform="translate(0)" fill="#e10165"/>
+    </g>
+  </g>
+  <rect id="Rectángulo_8498" data-name="Rectángulo 8498" width="40" height="40" fill="none"/>
+</svg>

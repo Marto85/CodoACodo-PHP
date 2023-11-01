@@ -1,0 +1,9 @@
+<svg id="ic_calendar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="noun_Calendar_2872366" transform="translate(12 10)">
+    <g id="Grupo_7470" data-name="Grupo 7470">
+      <path id="Trazado_53449" data-name="Trazado 53449" d="M.9,1.735H5.83V.9a.9.9,0,0,1,1.8,0v.833H17.63V.9a.9.9,0,0,1,1.8,0v.833h4.928a.875.875,0,0,1,.9.9V19.365A7.613,7.613,0,0,1,17.63,27H.9a.875.875,0,0,1-.9-.9V2.638A.875.875,0,0,1,.9,1.735ZM19.434,3.47V4.3a.9.9,0,0,1-1.8,0V3.47H7.635V4.3a.9.9,0,1,1-1.8,0V3.47h-4.1V6.386H23.53V3.47Zm4.1,4.65H1.735V25.265H17.63a5.9,5.9,0,0,0,5.9-5.9Z" fill="#e10165"/>
+      <path id="Trazado_53450" data-name="Trazado 53450" d="M112.51,194.258a.883.883,0,0,1,1.249-1.249l2.082,2.082,4.581-4.581a.883.883,0,0,1,1.249,1.249l-5.206,5.136a.883.883,0,0,1-1.249.069Z" transform="translate(-104.459 -177.045)" fill="#e10165"/>
+    </g>
+  </g>
+  <rect id="Rectángulo_8933" data-name="Rectángulo 8933" width="50" height="50" fill="none"/>
+</svg>

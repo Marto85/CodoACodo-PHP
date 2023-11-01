@@ -1,0 +1,132 @@
+hr {
+    height: 2px;
+    background-color: #E10165;
+    width: 150px;
+    border-radius: 3px;
+}
+
+.content-title {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.detail-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.detail-event > .col-10 {
+    max-width: 800px;
+}
+
+.detail-event .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-event {
+    text-align: center;
+    margin-top: 10px;
+    color: #E10165;
+    padding: 20px 0;
+}
+
+.row img {
+    max-width: 100%;
+}
+
+.info {
+    color: #5F5F5F;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 3px;
+    align-self: flex-start;
+    align-items: center;
+}
+
+.item p {
+    font-size: 19px;
+    color: #5F5F5F;
+    font-weight: bold;
+}
+
+.item span {
+    color: #E10165;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.item img {
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.event-description {
+    color: #5F5F5F;
+    font-size: 22px;
+}
+
+.description-text {
+    color: #5F5F5F;
+    font-weight: bold;
+    margin-top: 250px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.content {
+    max-height: 25px;
+    margin-bottom: 100px;
+}
+
+.content-date {
+    align-items: center;
+    width: 125px;
+    color: #5F5F5F;
+    max-height: 100px;
+    border: 1px solid grey;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.day {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.button-payment {
+    background-color: #E10165;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 4px 24px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 450px) {
+    .detail-event .col-lg-6 {
+        align-items: flex-start;
+    }
+}
