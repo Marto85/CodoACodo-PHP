@@ -11,6 +11,18 @@ hr {
     flex-direction: column;
 }
 
+.line-title {
+    height: 8px;
+    background-color: #E10165;
+    width: 150px;
+    border-radius: 3px;
+}
+
+.line-tickets {
+    height: 2px;
+    background-color: #5F5F5F;
+}
+
 .detail-event {
     display: flex;
     justify-content: center;
@@ -123,6 +135,40 @@ hr {
     border: none;
     width: 300px;
     margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container {
+    max-width: 800px;
+}
+
+/* Establece el estilo predeterminado para los elementos seleccionables */
+.selectable-card {
+    cursor: pointer;
+    background-color: #5F5F5F;
+    color: white;
+}
+
+/* Cuando el usuario pase el mouse por encima, puedes cambiar el color del fondo si lo deseas */
+.selectable-card:hover {
+    background-color: #E10165;
+    color: white;
+}
+
+.header-price,
+.price,
+.number {
+    font-weight: bold;
+}
+
+.service-cost {
+    color: #e00d0d;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 @media (max-width: 450px) {
