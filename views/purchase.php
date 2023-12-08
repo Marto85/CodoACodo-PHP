@@ -8,9 +8,7 @@
     <link href="public/css/purchase.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@300;700&family=Rubik:wght@400;600&family=Young+Serif&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@300;700&family=Rubik:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,37 +17,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
-                <img src="public/imgs/logos/Logo-EventiaHD.jpg" alt="Logo" width="200" height="50"
-                    class="d-inline-block align-text-top img-fluid">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Buscar Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Quienes somos</a>
-                    </li>
-                </ul>
-                <form class="d-flex search" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar evento" aria-label="Search">
-                    <i class="bi bi-search"></i>
-                </form>
-            </div>
-        </div>
-    </nav>
-
+    <?php
+    include 'navbar.php';
+    ?>
 
     <div class="detail-event">
         <div class="row py-4 justify-center content-container">
@@ -62,8 +32,7 @@
                 </div>
                 <div class="description col col-12">
                     <div class="row">
-                        <div class="col-lg-6 col-12"><img src="./public/imgs/cards/Card3.webp"
-                                alt="Evento - UNA PAREJA REAL">
+                        <div class="col-lg-6 col-12"><img src="./public/imgs/cards/Card3.webp" alt="Evento - UNA PAREJA REAL">
                         </div>
                         <div class="px-md-6 col-lg-6 col-12">
                             <div class="row content">
@@ -162,7 +131,7 @@
                                                 <div class="px-3 py-1 text-center">
                                                     <p class="price">
                                                         $10.000 + <span>$1000 *</span></p>
-                                                        <div class="line-tickets"></div>
+                                                    <div class="line-tickets"></div>
                                                     <div class="text-price py-4">Valor entrada</div>
                                                     <div class="pt-8 pb-1 number">$ 11.000</div>
                                                 </div>
@@ -178,7 +147,7 @@
                                                 <div class="px-3 py-1 text-center">
                                                     <p class="price">
                                                         $8000 + <span>$800 *</span></p>
-                                                        <div class="line-tickets"></div>
+                                                    <div class="line-tickets"></div>
                                                     <div class="text-price py-4">Valor entrada</div>
                                                     <div class="pt-8 pb-1 number">$ 8.800</div>
                                                 </div>
@@ -194,7 +163,7 @@
                                                 <div class="px-3 py-1 text-center">
                                                     <p class="price">
                                                         $7000 + <span>$700 *</span></p>
-                                                        <div class="line-tickets"></div>
+                                                    <div class="line-tickets"></div>
                                                     <div class="text-price py-4">Valor entrada</div>
                                                     <div class="pt-8 pb-1 number">$ 7700</div>
                                                 </div>
@@ -219,8 +188,7 @@
                                             <div class="row my-3">
                                                 <div class="col-sm-12 col-12 col-auto">
                                                     <div class="input-container">
-                                                        <input type="email" class="form-control mail"
-                                                            placeholder="Correo Electrónico">
+                                                        <input type="email" class="form-control mail" placeholder="Correo Electrónico">
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,7 +207,7 @@
                                                             <option value="7">7</option>
                                                             <option value="8">8</option>
                                                             <option value="9">9</option>
-                                                            <option value="10">10</option>                                                          
+                                                            <option value="10">10</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -259,8 +227,7 @@
                                                 <div class="col-sm-12 col-12 col-auto">
                                                     <div class="input-container">
                                                         <label for="price-final">Precio Final</label>
-                                                        <input type="text" class="form-control" id="price-final"
-                                                            readonly>
+                                                        <input type="text" class="form-control" id="price-final" readonly>
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,8 +311,7 @@
                 </div>
             </div>
             <hr class="my-2 d-lg-none">
-            <div
-                class="menu text-center py-2 px-2 footer-navs col-lg-6 col-12 d-flex align-items-center justify-content-center">
+            <div class="menu text-center py-2 px-2 footer-navs col-lg-6 col-12 d-flex align-items-center justify-content-center">
                 <div class="row align-center justify-center">
                     <div class="text-center col col-12">
                         <h4 class="px-2 footer-title">Menú:</h4>
@@ -361,23 +327,18 @@
             </div>
         </div>
         <div class="reserved row no-gutters justify-content-center">
-            <div xs="10" offset-xs="1"
-                class="text-center py-2 px-2 col-md-6 col-lg-7 col-12 d-flex align-items-center justify-content-center">
+            <div xs="10" offset-xs="1" class="text-center py-2 px-2 col-md-6 col-lg-7 col-12 d-flex align-items-center justify-content-center">
                 <div xs="12" class="text-left text-body-2 px-10 col-sm-6 col-10">
                     Copyright @ 2023 EVENTIA.COM <br>
                     All rights reserved
                 </div>
-                <div class="afip px-0 me-lg-4 me-0 col col-1"><a
-                        href="http://qr.afip.gob.ar/?qr=u5pRzLzksurerO_rOeGgVw,," target="_F960AFIPInfo"><img
-                            src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" width="55"></a>
+                <div class="afip px-0 me-lg-4 me-0 col col-1"><a href="http://qr.afip.gob.ar/?qr=u5pRzLzksurerO_rOeGgVw,," target="_F960AFIPInfo"><img src="https://www.afip.gob.ar/images/f960/DATAWEB.jpg" width="55"></a>
                 </div>
-                <div class="arg px-0 me-lg-4 me-0 col col-1"><a
-                        href="https://www.argentina.gob.ar/aaip/datospersonales/reclama/30710605366--RL-2019-190460-APN-DNPDP#AAIP,,"><img
-                            src="https://www.argentina.gob.ar/sites/default/files/aaip-isologo.png" alt="AAIP RNBD"
-                            style="width: 55px; height: 71px; border: 0px;"></a></div>
+                <div class="arg px-0 me-lg-4 me-0 col col-1"><a href="https://www.argentina.gob.ar/aaip/datospersonales/reclama/30710605366--RL-2019-190460-APN-DNPDP#AAIP,,"><img src="https://www.argentina.gob.ar/sites/default/files/aaip-isologo.png" alt="AAIP RNBD" style="width: 55px; height: 71px; border: 0px;"></a></div>
             </div>
         </div>
     </div>
     <script src="/public/js/main.js"></script>
 </body>
+
 </html>
