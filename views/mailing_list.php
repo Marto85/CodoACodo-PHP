@@ -22,7 +22,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <title>Eventia</title>
 </head>
 <header>
@@ -72,10 +72,50 @@ $result = $conn->query($sql);
                     ?>
                 </tbody>
             </table>
+
+            <!-- Modal de Confirmación de Eliminación -->
+            <div class="modal" id="confirmarEliminarModal" tabindex="-1" aria-labelledby="confirmarEliminarModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmarEliminarModalLabel">Confirmar Eliminación</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Estás seguro de que deseas eliminar este registro?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-danger" id="eliminarBtn" data-id="" onclick="abrirFormularioEliminar()">Eliminar</button>
+                            <form id="eliminarForm" method="post" action="../controllers/mailing.php">
+                                <input type="hidden" name="eliminarId" id="eliminarId" value="">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="eliminacionExitosaModal" tabindex="-1" aria-labelledby="eliminacionExitosaModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-warning text-success">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="eliminacionExitosaModalLabel">Eliminación Exitosa</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <strong>Registro eliminado con éxito.</strong>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick="cerrarModal()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
     <?php
     include 'partials/footer.php';
     ?>
+    <script src="../public/js/mailing.js"></script>
 </body>
