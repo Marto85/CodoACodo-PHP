@@ -1,4 +1,21 @@
-`<!DOCTYPE html>
+<?php
+session_start();
+
+// Verifica si se ha realizado con éxito la operación en mailing.php
+if (isset($_SESSION['registroExitoso']) && $_SESSION['registroExitoso']) {
+    // Muestra el modal con un delay de 3 segundos
+    echo '<script>
+            setTimeout(function() {
+                $("#graciasModal").modal("show");
+            }, 500);
+          </script>';
+    
+    // Limpia la variable de sesión después de usarla
+    unset($_SESSION['registroExitoso']);
+}
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +34,7 @@
 
 <body>
     <?php
-    include './views/navbar.php';
+    include './views/partials/navbar.php';
     ?>
 
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -129,41 +146,34 @@
                 mantendremos
                 al tanto. Todo pasa en Eventia.</h3>
         </div>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-md-8">
-                    <form>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre">
-                            </div>
-                            <div class="col-md-6 col-sm-12 mb-3">
-                                <input type="text" class="form-control" id="lastName" placeholder="Escribe tu apellido">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 mb-3">
-                                <input type="email" class="form-control" id="email" placeholder="Escribe tu email">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-sm-12 text-center">
-                                <button type="submit" class="btn btn-primary">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="form-logo col-md-4">
-                    <img src="public/imgs/logos/Logo-EventiaHD.png" alt="Logo al costado del formulario" class="img-fluid">
-                </div>
+
+        <?php
+        include './views/partials/mailing_form.php';
+        ?>
+        <div class="modal fade" id="graciasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¡Gracias por suscribirte!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Vas a recibir las últimas novedades próximamente.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary"><a href="../views/mailing_list.php"">Usuarios registrados</a></button>
             </div>
         </div>
     </div>
+</div>
+
+    </div>
 
     <?php
-    include './views/footer.php';
+    include './views/partials/footer.php';
     ?>
 
 </body>
 
-</html>`
+</html>
