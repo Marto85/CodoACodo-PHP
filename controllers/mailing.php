@@ -8,27 +8,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["eliminarId"])) {
         $eliminarId = $_POST["eliminarId"];
 
-        // Consulta preparada para eliminar el registro con el ID proporcionado
         $eliminarSql = $conn->prepare("DELETE FROM lista_correo WHERE id = ?");
         $eliminarSql->bind_param("i", $eliminarId);
 
         if ($eliminarSql->execute()) {
-            // Eliminación exitosa
+
             $eliminarSql->close();
             $conn->close();
 
-            // Puedes redirigir a la página deseada después de la eliminación
             header("Location: ../views/mailing_list.php");
             exit();
         } else {
-            // Error en la eliminación
             echo "Error al intentar eliminar el registro: " . $eliminarSql->error;
         }
 
         $eliminarSql->close();
     }
 
-    // Verifica si se han enviado datos para insertar un nuevo registro
     if (isset($_POST["nombre"]) && isset($_POST["apellido"]) && isset($_POST["email"])) {
         $name = $_POST["nombre"];
         $lastName = $_POST["apellido"];
