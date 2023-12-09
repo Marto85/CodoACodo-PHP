@@ -9,7 +9,7 @@ if (isset($_SESSION['registroExitoso']) && $_SESSION['registroExitoso']) {
                 $("#graciasModal").modal("show");
             }, 500);
           </script>';
-    
+
     // Limpia la variable de sesión después de usarla
     unset($_SESSION['registroExitoso']);
 }
@@ -21,7 +21,7 @@ if (isset($_SESSION['registroExitoso']) && $_SESSION['registroExitoso']) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="public/css/index.css" rel="stylesheet">
+    <link href="./public/css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@300;700&family=Rubik:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
@@ -151,22 +151,22 @@ if (isset($_SESSION['registroExitoso']) && $_SESSION['registroExitoso']) {
         include './views/partials/mailing_form.php';
         ?>
         <div class="modal fade" id="graciasModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¡Gracias por suscribirte!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Vas a recibir las últimas novedades próximamente.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary"><a href="../views/mailing_list.php"">Usuarios registrados</a></button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">¡Gracias por suscribirte!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Vas a recibir las últimas novedades próximamente.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary"><a href="../views/mailing_list.php">Usuarios registrados</a></button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
     </div>
 

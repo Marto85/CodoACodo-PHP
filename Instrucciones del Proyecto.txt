@@ -9,4 +9,4 @@ Para realizr migraciones, creando tablas y sus relaciones:
 
 1) Navega hasta la carpeta donde tienes tu archivo db_config.php
 2) El servidor PHP con el siguiente comando: php -S localhost:8000
-3) Abre tu navegador web y navega a http://localhost:8000/db_config.php. Esto ejecutará tu script PHP y mostrará los mensajes de éxito o errores en el navegador.
+3) Abre tu navegador web y navega a http://localhost:8000/models/migrations.php Esto ejecutará tu script PHP y mostrará los mensajes de éxito o errores en el navegador.
