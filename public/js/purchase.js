@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 )};
     
-    // Agregar manejadores de eventos
+
     selectableCards.forEach(function (card) {
         card.addEventListener('click', function () {
             calcularPrecioFinal();

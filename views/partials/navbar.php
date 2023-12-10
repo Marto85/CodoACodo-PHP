@@ -21,10 +21,17 @@
                     <a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>
                 </li>
             </ul>
+            <div class="dropdown">
+                <i id="user-icon" class="user-icon fa-regular fa-user fa-lg" data-bs-toggle="dropdown"] style="color: #282e29"></i>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                    <li><a class="dropdown-item" href="#">Ingresar</a></li>
+                    <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                </ul>
+            </div>
             <form class="d-flex search" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar evento" aria-label="Search">
                 <i class="bi bi-search"></i>
-                <i class="user-icon fa-regular fa-user fa-lg" style="color: #282e29"></i>
             </form>
         </div>
     </div>
