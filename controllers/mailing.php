@@ -48,6 +48,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql->close();
     }
+
+    // Verifica si se ha enviado un ID para actualizar
+    if (isset($_POST["accion"]) && $_POST["accion"] == "actualizar" && isset($_POST["id"])) {
+        $id = $_POST["id"];
+        $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
+        $email = $_POST["email"];
+
+        $actualizarSql = $conn->prepare("UPDATE lista_correo SET nombre = ?, apellido = ?, email = ? WHERE id = ?");
+        $actualizarSql->bind_param("sssi", $nombre, $apellido, $email, $id);
+
+        if ($actualizarSql->execute()) {
+            echo "actualizacionExitosa";
+            $actualizarSql->close();
+            $conn->close();
+            exit();
+        } else {
+            echo "Error al intentar actualizar el registro: " . $actualizarSql->error;
+        }
+
+        $actualizarSql->close();
+    }
+ 
 }
 
 $conn->close();

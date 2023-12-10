@@ -54,16 +54,16 @@ $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                             $id = $row['id'];
                             echo "<tr>";
-                            echo "<td>" . $row['nombre'] . "</td>";
-                            echo "<td>" . $row['apellido'] . "</td>";
-                            echo "<td>" . $row['email'] . "</td>";
-
-                            // Botón Editar y Guardar
-                            echo "<td>";
-                            echo "<button type='button' class='btn btn-warning btn-editar' data-id='$id'>Editar</button>";
-                            echo "<button type='button' class='btn btn-success btn-guardar guardar-btn' data-id='$id' style='display: none;'>Guardar</button>";
+                            echo "<td><input type='text' value='" . $row['nombre'] . "' class='form-control nombre' disabled></td>";
+                            echo "<td><input type='text' value='" . $row['apellido'] . "' class='form-control apellido' disabled></td>";
+                            echo "<td><input type='text' value='" . $row['email'] . "' class='form-control email' disabled></td>";
+                            echo "<td class='align-middle'>";
+                            echo "   <div class='d-flex justify-content-center'>";
+                            echo "       <button type='button' id= 'edit-btn' class='btn btn-warning btn-editar btn-m btn-block' data-id='$id'>Actualizar</button>";
+                            echo "       <button type='button' class='btn btn-success btn-guardar btn-m btn-block' data-id='$id' style='display: none;'>Guardar</button>";
+                            echo "   </div>";
                             echo "</td>";
-                            echo "<td><button type='button' class='btn btn-danger btn-eliminar' data-id='" . $row['id'] . "' onclick='confirmarEliminar(this)'>Eliminar</button></td>";
+                            echo "<td class='align-middle'><div class='d-flex justify-content-center'><button type='button' class='btn btn-danger btn-eliminar btn-m btn-block' data-id='$id' onclick='confirmarEliminar(this)'>Eliminar</button></div></td>";
                             echo "</tr>";
                         }
                     } else {
@@ -71,6 +71,8 @@ $result = $conn->query($sql);
                     }
                     ?>
                 </tbody>
+
+
             </table>
 
             <!-- Modal de Confirmación de Eliminación -->

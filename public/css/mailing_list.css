@@ -8,7 +8,6 @@ body {
     padding-top: 100px;
 }
 
-/* .list {
-    object-fit: cover;
-    background-image: url(../imgs/mailing.jpg);
-} */
+#edit-btn {
+    color: rgb(22, 26, 224);
+}
