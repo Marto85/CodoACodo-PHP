@@ -30,7 +30,7 @@
                 </div>
                 <h1 class="text-center mt-4 mb-4">Registro de Usuarios</h1>
 
-                <form  action="../controllers/register.php" method="POST">
+                <form action="../controllers/register.php" method="POST">
                     <div class="mb-3">
                         <div class="row mb-2">
                             <div class="col-md-6">
@@ -62,8 +62,11 @@
                             </div>
                         </div>
                         <div class="row mb-2">
-                            <div class="col-md-12">
-                                <input type="telephone" class="form-control" id="telefono" name="telefono" placeholder="Telefono" required>
+                            <div class="col-md-6">
+                                <input type="telephone" class="form-control mb-2 mb-md-0" id="telefono" name="telefono" placeholder="Telefono" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="provincia" name="provincia" placeholder="Provincia" required>
                             </div>
                         </div>
                         <div class="row mb-2">
