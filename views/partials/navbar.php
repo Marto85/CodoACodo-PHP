@@ -26,7 +26,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
                     <li><a class="dropdown-item" href="#">Ingresar</a></li>
-                    <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                    <li><a class="dropdown-item" href="../../views/register.php">Registrarse</a></li>
                 </ul>
             </div>
             <form class="d-flex search" role="search">
