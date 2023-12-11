@@ -19,11 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Las contraseñas no coinciden";
     } else {
         // Verifico si el usuario sube una imagen de perfil
-        if ($_FILES['imagen_perfil']['error'] == UPLOAD_ERR_OK) {
-
+        if ($_FILES['imagen_perfil']['error'] == UPLOAD_ERR_OK && !empty($_FILES['imagen_perfil']['tmp_name'])) {
             $info = getimagesize($_FILES['imagen_perfil']['tmp_name']);
 
-            // Verifico si lo que se subio es una imagen
+            // Verifico si lo que se subió es una imagen
             if ($info === FALSE) {
                 echo "El archivo subido no es una imagen";
             } else {
@@ -33,8 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Nombre único para la imagen
                 $profilePicture = $uploadDir . uniqid() . basename($_FILES['imagen_perfil']['name']);
 
-                // Mover la imagen al directorio establecido mas arriba
+                // Mover la imagen al directorio establecido más arriba
                 if (move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $profilePicture)) {
+                    // Resto del código para procesar el registro con la imagen subida
+                    // ...
+
                     // Hash de la contraseña
                     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -59,9 +61,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
         } else {
-            echo "Error al subir la imagen";
+            // Si el usuario no sube una imagen, asignar la imagen por defecto
+            $profilePicture = "../public/imgs/profiles/default.jpg";
+
+            // Resto del código para procesar el registro sin una imagen subida
+            // ...
+
+            // Hash de la contraseña
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+            // Sentencia preparada para evitar inyección SQL
+            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, calle, altura, localidad, partido, telefono, password, imagen_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+            // Vincular los parámetros
+            $stmt->bind_param("ssssisssss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $telefono, $hashedPassword, $profilePicture);
+
+            if ($stmt->execute()) {
+                // cookie de sesión vigente 30 minutos
+                $expiryTime = time() + (30 * 60);
+                setcookie("user_id", $conn->insert_id, $expiryTime, "/");
+                header("Location: ../index.php");
+            } else {
+                echo "Error en el registro: " . $stmt->error;
+            }
+
+            $stmt->close();
         }
     }
 } else {
     echo "Acceso no permitido";
 }
+?>

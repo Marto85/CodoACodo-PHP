@@ -28,18 +28,14 @@
                 <div class="logo-container logo text-center">
                     <img src="../public/imgs/logos/Favicon.svg" alt="Logo" class="img-fluid">
                 </div>
-                <h1 class="text-center mt-4 mb-4">Registro</h1>
+                <!-- <h1 class="text-center mt-4 mb-4">Registro</h1> -->
 
                 <form action="../controllers/register.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <div class="row mb-2">
-                            <div class="col-md-12 text-center">
-                                <label for="imagen_perfil" id="imagen_perfil_label" class="">
-                                    <div id="preview-container">
-                                        <img class="img-fluid" id="preview-image" src="#" alt="Vista previa de la imagen" style="display: none;">
-                                    </div>
-                                </label>
-                                <input type="file" class="form-control" id="imagen_perfil" name="imagen_perfil" accept="image/*" hidden required onchange="previewImage()">
+                            <div class="mx-auto col-md-12 text-center" id="preview-container" >
+                                <input type="file" class="form-control" id="imagen_perfil" name="imagen_perfil" accept="image/*" style="display: none;">
+                                <img id="preview-image" src="../public/imgs/profiles/default.jpg" alt="Vista previa de la imagen">
                             </div>
                         </div>
                         <div class="row mb-2">
