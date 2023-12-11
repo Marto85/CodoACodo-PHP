@@ -11,11 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $eliminarSql->close();
             $conn->close();
             // Redirige a la página que muestra el modal de eliminación exitosa
-            header("Location: mailing_list.php?eliminacionExitosa=true");
+            header("Location: ../views/mailing_list.php");
             exit();
         } else {
             // En caso de error, redirige a la página con un parámetro de error
-            header("Location: mailing_list.php?eliminacionExitosa=false&error=" . $eliminarSql->error);
+            header("Location: ../views/mailing_list.php?eliminacionExitosa=false&error=" . $eliminarSql->error);
             exit();
         }
     }
@@ -52,9 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->bind_param("sssi", $name, $lastName, $email, $defaultEstadoSuscripcion);
 
         if ($sql->execute()) {
+            session_start();
+            $_SESSION['registroExitoso'] = true;
             $sql->close();
             $conn->close();
-            echo json_encode(['success' => true, 'message' => 'Registro agregado con éxito']);
+            header("Location: ../index.php");
             exit();
         } else {
             echo json_encode(['success' => false, 'message' => 'Error al agregar el registro: ' . $sql->error]);
