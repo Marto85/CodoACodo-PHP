@@ -14,7 +14,8 @@ $sql = "CREATE TABLE usuarios (
     partido VARCHAR(30),
     provincia VARCHAR(30),
     telefono VARCHAR(30),
-    password VARCHAR(255)
+    password VARCHAR(255),
+    imagen_perfil VARCHAR(255) DEFAULT '/public/imgs/profiles/default.jpg'
 )";
 
 if ($conn->query($sql) === TRUE) {
