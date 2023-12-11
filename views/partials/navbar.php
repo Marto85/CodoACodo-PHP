@@ -29,7 +29,11 @@
                     echo '<i id="user-icon" class="user-icon fa-regular fa-user fa-lg" data-bs-toggle="dropdown" style="color: #282e29"></i>';
                     echo '<ul class="dropdown-menu">';
                     echo '<li><a class="dropdown-item" href="#">Mi Perfil</a></li>';
-                    echo '<li><a class="dropdown-item" href="#">Salir</a></li>';
+                    echo '<li>';
+                    echo '<form action="../../controllers/logout.php" method="post">';
+                    echo '<button type="submit" class="dropdown-item" style="border: none; background: none; cursor: pointer;">Salir</button>';
+                    echo '</form>';
+                    echo '</li>';
                     echo '</ul>';
                 } else {
                     // Usuario no autenticado
@@ -41,6 +45,8 @@
                 }
                 ?>
             </div>
+
+
             <form class="d-flex search" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar evento" aria-label="Search">
                 <i class="bi bi-search"></i>

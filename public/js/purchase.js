@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isNaN(discountedPrice)) {
                 finalPrice.value = '$ 0.00'; // Si el resultado es NaN, mostrar "$ 0.00"
             } else {
-                // Agrego formato para separar por miles y mostrar 2 decimales (ESTO LO INVESTIGUE PORQUE DESCONOCIA COMO HACERLO)
+                // Agrego formato para separar por miles y mostrar 2 decimales
                 var formattedPrice = new Intl.NumberFormat('es-ES', {
                     style: 'currency',
                     currency: 'ARS',

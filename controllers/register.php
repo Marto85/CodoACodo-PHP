@@ -1,7 +1,6 @@
 <?php
 include '../models/db_config.php';
 
-// Verifica si se ha enviado una solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $nombre = $_POST["nombre"];
@@ -21,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif ($password != $confirmPassword) {
         echo "Las contraseñas no coinciden";
     } else {
-        // Hash de la contraseña
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
         // Sentencia preparada para evitar inyección SQL
@@ -30,17 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Vincular los parámetros
         $stmt->bind_param("ssssissss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $telefono, $hashedPassword);
 
-        // Ejecutar la sentencia preparada
         if ($stmt->execute()) {
             // cookie de sesion vigente 30 minutos
-            $expiryTime = time() + (30 * 60); // 30 minutos
-            setcookie("user_id", $conn->insert_id, $expiryTime, "/"); // Cambiar "user_id" según tus necesidades
+            $expiryTime = time() + (30 * 60);
+            setcookie("user_id", $conn->insert_id, $expiryTime, "/");
             header("Location: ../index.php");
         } else {
             echo "Error en el registro: " . $stmt->error;
         }
 
-        // Cerrar la sentencia preparada y la conexión
         $stmt->close();
         $conn->close();
     }

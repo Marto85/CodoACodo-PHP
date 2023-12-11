@@ -1,10 +1,9 @@
 <?php
 include '../models/db_config.php';
 
-// Verifica si se ha enviado una solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // Verifica si se ha enviado un ID para eliminar
+    // chequeo si se ha enviado un ID para eliminar
     if (isset($_POST["eliminarId"])) {
         $eliminarId = $_POST["eliminarId"];
 
@@ -49,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql->close();
     }
 
-    // Verifica si se ha enviado un ID para actualizar
+    // verifico si se ha enviado un ID para actualizar
     if (isset($_POST["accion"]) && $_POST["accion"] == "actualizar" && isset($_POST["id"])) {
         $id = $_POST["id"];
         $nombre = $_POST["nombre"];
