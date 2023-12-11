@@ -19,68 +19,77 @@ function abrirFormularioEliminar() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-
-    var btnEditar = document.querySelectorAll('.btn-editar');
-    btnEditar.forEach(function (btn) {
+    // Event listener para los botones "Editar"
+    document.querySelectorAll('.btn-editar').forEach(function (btn) {
         btn.addEventListener('click', function () {
-            // Obtener la fila actual
-            var row = btn.closest('tr');
+            // Oculta el botón "Editar" y muestra el botón "Guardar"
+            btn.style.display = 'none';
+            var id = btn.getAttribute('data-id');
+            var btnGuardar = document.querySelector('.btn-guardar[data-id="' + id + '"]');
+            btnGuardar.style.display = 'inline-block';
 
-            // Habilitar la edición de los campos
-            row.querySelector('.nombre').disabled = false;
-            row.querySelector('.apellido').disabled = false;
-            row.querySelector('.email').disabled = false;
-
-            // Alternar visibilidad de botones
-            row.querySelector('.btn-editar').style.display = 'none';
-            row.querySelector('.btn-guardar').style.display = 'block';
+            // Habilita la edición de los campos de texto
+            var fila = btn.closest('tr');
+            fila.querySelectorAll('input').forEach(function (input) {
+                input.removeAttribute('disabled');
+            });
         });
     });
 
-    var btnGuardar = document.querySelectorAll('.btn-guardar');
-    btnGuardar.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            // Obtener la fila actual
-            var row = btn.closest('tr');
+    // Event listener para los botones "Guardar"
+    document.querySelectorAll('.btn-guardar').forEach(function (btnGuardar) {
+        btnGuardar.addEventListener('click', function () {
+            // Oculta el botón "Guardar" y muestra el botón "Editar"
+            btnGuardar.style.display = 'none';
+            var id = btnGuardar.getAttribute('data-id');
+            var btnEditar = document.querySelector('.btn-editar[data-id="' + id + '"]');
+            btnEditar.style.display = 'inline-block';
 
-            // Deshabilitar la edición de los campos
-            row.querySelector('.nombre').disabled = true;
-            row.querySelector('.apellido').disabled = true;
-            row.querySelector('.email').disabled = true;
+            // Deshabilita la edición de los campos de texto
+            var fila = btnGuardar.closest('tr');
+            fila.querySelectorAll('input').forEach(function (input) {
+                input.setAttribute('disabled', 'disabled');
+            });
 
-            // Alternar visibilidad de botones
-            row.querySelector('.btn-editar').style.display = 'block';
-            row.querySelector('.btn-guardar').style.display = 'none';
-
-            // Obtener los nuevos valores
-            var id = row.getAttribute('data-id');
-            var nombre = row.querySelector('.nombre').value;
-            var apellido = row.querySelector('.apellido').value;
-            var email = row.querySelector('.email').value;
-
-            // Enviar datos al servidor para la actualización
-            actualizarRegistro(id, nombre, apellido, email);
+            // Obtiene los valores editados y los envía al servidor
+            var nombre = fila.querySelector('.nombre').value;
+            var apellido = fila.querySelector('.apellido').value;
+            var email = fila.querySelector('.email').value;
+            enviarEdicion(id, nombre, apellido, email);
         });
     });
-});
 
-async function actualizarRegistro(id, nombre, apellido, email) {
-    try {
-        const response = await fetch('../controllers/mailing.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `id=${id}&nombre=${nombre}&apellido=${apellido}&email=${email}&accion=actualizar`,
-        });
+    // Función para enviar la edición al servidor
+    async function enviarEdicion(id, nombre, apellido, email) {
+        console.log('Enviando datos de edición al servidor:', id, nombre, apellido, email);
 
-        if (response.ok) {
-            // Puedes agregar lógica adicional si es necesario
-            console.log('Registro actualizado exitosamente');
-        } else {
-            console.error('Error al actualizar el registro:', response.statusText);
+        // Crea un objeto FormData y agrega los datos
+        var formData = new FormData();
+        formData.append('id', id);
+        formData.append('nombre', nombre);
+        formData.append('apellido', apellido);
+        formData.append('email', email);
+
+        try {
+            // Realiza una solicitud AJAX para enviar los datos al servidor
+            const response = await fetch('../controllers/mailing.php', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                if ('success' in data && data.success === true) {
+                    // Refresca la página después de la actualización
+                    window.location.reload();
+                } else {
+                    console.error('Error al actualizar el registro:', data.message);
+                }
+            } else {
+                console.error('Error en la solicitud:', response.status);
+            }
+        } catch (error) {
+            console.error('Error:', error);
         }
-    } catch (error) {
-        console.error('Error al actualizar el registro:', error);
     }
-}
+});

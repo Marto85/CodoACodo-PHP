@@ -1,11 +1,16 @@
 <?php
+session_start(); // Inicia la sesión si no está iniciada
 include '../models/db_config.php';
-?>
 
-<?php
 // Consulta para obtener todos los registros de la tabla 
 $sql = "SELECT * FROM lista_correo";
 $result = $conn->query($sql);
+
+// Verifica si se ha completado una eliminación exitosa
+if (isset($_SESSION['eliminacionExitosa']) && $_SESSION['eliminacionExitosa'] === true) {
+    echo "<script>$('#eliminacionExitosaModal').modal('show');</script>";
+    unset($_SESSION['eliminacionExitosa']); // Limpia la variable de sesión después de mostrar el modal
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,28 +101,15 @@ $result = $conn->query($sql);
                     </div>
                 </div>
             </div>
-
-            <div class="modal" id="eliminacionExitosaModal" tabindex="-1" aria-labelledby="eliminacionExitosaModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content bg-warning text-success">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="eliminacionExitosaModalLabel">Eliminación Exitosa</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <strong>Registro eliminado con éxito.</strong>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick="cerrarModal()">Cerrar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     </div>
 
     <?php
     include 'partials/footer.php';
     ?>
+   
     <script src="../public/js/mailing.js"></script>
 </body>
+</body>
+
+</html>
