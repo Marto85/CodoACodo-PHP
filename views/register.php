@@ -28,10 +28,20 @@
                 <div class="logo-container logo text-center">
                     <img src="../public/imgs/logos/Favicon.svg" alt="Logo" class="img-fluid">
                 </div>
-                <h1 class="text-center mt-4 mb-4">Registro de Usuarios</h1>
+                <h1 class="text-center mt-4 mb-4">Registro</h1>
 
-                <form action="../controllers/register.php" method="POST">
+                <form action="../controllers/register.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
+                        <div class="row mb-2">
+                            <div class="col-md-12 text-center">
+                                <label for="imagen_perfil" id="imagen_perfil_label" class="">
+                                    <div id="preview-container">
+                                        <img class="img-fluid" id="preview-image" src="#" alt="Vista previa de la imagen" style="display: none;">
+                                    </div>
+                                </label>
+                                <input type="file" class="form-control" id="imagen_perfil" name="imagen_perfil" accept="image/*" hidden required onchange="previewImage()">
+                            </div>
+                        </div>
                         <div class="row mb-2">
                             <div class="col-md-6">
                                 <input type="text" class="form-control mb-2 mb-md-0" id="nombre" name="nombre" placeholder="Nombre" required>
@@ -94,6 +104,8 @@
     <?php
     include './partials/footer.php';
     ?>
+
+    <script src="../public/js/users.js"></script>
 </body>
 
 </html>
