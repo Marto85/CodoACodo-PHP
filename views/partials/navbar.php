@@ -39,7 +39,7 @@
                     // Usuario no autenticado
                     echo '<i id="user-icon" class="user-icon fa-regular fa-user fa-lg" data-bs-toggle="dropdown" style="color: #282e29"></i>';
                     echo '<ul class="dropdown-menu">';
-                    echo '<li><a class="dropdown-item" href="#">Ingresar</a></li>';
+                    echo '<li><a class="dropdown-item" href="../../views/login.php">Ingresar</a></li>';
                     echo '<li><a class="dropdown-item" href="../../views/register.php">Registrarse</a></li>';
                     echo '</ul>';
                 }
