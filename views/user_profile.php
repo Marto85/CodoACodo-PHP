@@ -1,3 +1,29 @@
+<?php
+include '../models/db_config.php';
+// Verificar si la cookie de usuario está presente
+if(isset($_COOKIE["user_id"])) {
+    $user_id = $_COOKIE["user_id"];
+
+    // Buscar los datos del usuario en la base de datos
+    $stmt = $conn->prepare("SELECT nombre, apellido, email, calle, altura, localidad, partido, provincia, telefono, imagen_perfil FROM usuarios WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $provincia, $telefono, $imagen_perfil);
+        $stmt->fetch();
+    } else {
+        header("Location: ../index.php");
+        exit();
+    }
+
+    $stmt->close();
+} else {
+    header("Location: ../index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +54,7 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
+                    <img src="<?php echo $imagen_perfil; ?>" alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -40,28 +66,23 @@
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Maria Alejandra De la Cruz</h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="titulo"><?php echo $nombre . " " . $apellido; ?></h3>
+                <p class="texto">Aqui tal vez podria incluir mas adelante una descripcion que el usuario quiera hacer de si mismo</p>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-signs"></i> Direccion de usuario:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                    <li><i class="icono fas fa-briefcase"></i> Trabaja en.</li>
-                    <li><i class="icono fas fa-building"></i> Cargo</li>
+                    <li><i class="icono fas fa-map-signs"></i> Domicilio: <?php echo $calle . " " . $altura; ?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono: <?php echo $telefono; ?></li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion.</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento.</li>
-                    <li><i class="icono fas fa-user-check"></i> Registro.</li>
-                    <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Localidad/Pcia: <?php echo $localidad . ", " . $partido . ", " . $provincia; ?></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento (aun no incluida en db).</li>
                 </ul>
             </div>
             <div class="redes-sociales">
-                <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
-                <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
-                <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+                <a href="#" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+                <a href="#" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
+                <a href="#" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
             </div>
         </div>
     </section>
