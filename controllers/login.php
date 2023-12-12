@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $expiryTime = time() + (30 * 60);
                 setcookie("user_id", $user_id, $expiryTime, "/");
                 header("Location: ../index.php");
-                exit(); // Importante: asegúrate de salir después de redirigir
+                exit();
 
             } else {
                 echo "La contraseña es incorrecta";
