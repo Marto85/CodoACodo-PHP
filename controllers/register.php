@@ -9,11 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $altura = $_POST["altura"];
     $localidad = $_POST["localidad"];
     $partido = $_POST["partido"];
+    $provincia = $_POST["provincia"];
     $telefono = $_POST["telefono"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirm-password"];
 
-    if (empty($nombre) || empty($apellido) || empty($email) || empty($calle) || empty($altura) || empty($localidad) || empty($partido) || empty($telefono) || empty($password) || empty($confirmPassword)) {
+    if (empty($nombre) || empty($apellido) || empty($email) || empty($calle) || empty($altura) || empty($localidad) || empty($partido) || empty($provincia) || empty($telefono) || empty($password) || empty($confirmPassword)) {
         echo "Todos los campos son obligatorios";
     } elseif ($password != $confirmPassword) {
         echo "Las contraseñas no coinciden";
@@ -41,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
                     // Sentencia preparada para evitar inyección SQL
-                    $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, calle, altura, localidad, partido, telefono, password, imagen_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                    $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, calle, altura, localidad, partido, provincia, telefono, password, imagen_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                     // Vincular los parámetros
-                    $stmt->bind_param("ssssisssss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $telefono, $hashedPassword, $profilePicture);
+                    $stmt->bind_param("ssssissssss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $provincia, $telefono, $hashedPassword, $profilePicture);
 
                     if ($stmt->execute()) {
                         // cookie de sesión vigente 30 minutos
@@ -64,17 +65,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Si el usuario no sube una imagen, asignar la imagen por defecto
             $profilePicture = "../public/imgs/profiles/default.jpg";
 
-            // Resto del código para procesar el registro sin una imagen subida
-            // ...
-
             // Hash de la contraseña
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
             // Sentencia preparada para evitar inyección SQL
-            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, calle, altura, localidad, partido, telefono, password, imagen_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, calle, altura, localidad, partido, provincia, telefono, password, imagen_perfil) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             // Vincular los parámetros
-            $stmt->bind_param("ssssisssss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $telefono, $hashedPassword, $profilePicture);
+            $stmt->bind_param("ssssissssss", $nombre, $apellido, $email, $calle, $altura, $localidad, $partido, $provincia, $telefono, $hashedPassword, $profilePicture);
 
             if ($stmt->execute()) {
                 // cookie de sesión vigente 30 minutos
