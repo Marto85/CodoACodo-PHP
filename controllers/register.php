@@ -35,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Mover la imagen al directorio establecido más arriba
                 if (move_uploaded_file($_FILES['imagen_perfil']['tmp_name'], $profilePicture)) {
-                    // Resto del código para procesar el registro con la imagen subida
-                    // ...
 
                     // Hash de la contraseña
                     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
