@@ -3,9 +3,9 @@
 // ------------- Configuracion para conexion a db en 000WebHost ---------------
 // Configuración de la conexión a la base de datos
 // $servername = "localhost";
-// $username = "id21615585_martodev";
-// $password = "OradoresCodo2023$";
-// $dbname = "id21615585_oradores2023";
+// $username = "id21662667_eventia";
+// $password = "Eventia2023$";
+// $dbname = "id21662667_eventia";
 
 
 // ------------- Configuracion para conexion a db local ---------------
