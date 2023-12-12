@@ -28,7 +28,7 @@
                     // Usuario autenticado
                     echo '<i id="user-icon" class="user-icon fa-regular fa-user fa-lg" data-bs-toggle="dropdown" style="color: #282e29"></i>';
                     echo '<ul class="dropdown-menu">';
-                    echo '<li><a class="dropdown-item" href="#">Mi Perfil</a></li>';
+                    echo '<li><a class="dropdown-item" href="../views/user_profile.php">Mi Perfil</a></li>';
                     echo '<li>';
                     echo '<form action="../../controllers/logout.php" method="post">';
                     echo '<button type="submit" class="dropdown-item" style="border: none; background: none; cursor: pointer;">Salir</button>';

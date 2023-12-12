@@ -33,9 +33,11 @@
                 <form action="../controllers/register.php" method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
                         <div class="row mb-2">
-                            <div class="mx-auto col-md-12 text-center" id="preview-container" >
-                                <input type="file" class="form-control" id="imagen_perfil" name="imagen_perfil" accept="image/*" style="display: none;">
-                                <img id="preview-image" src="../public/imgs/profiles/default.jpg" alt="Vista previa de la imagen">
+                            <div class="mx-auto" id="preview-container">
+                                <label for="imagen_perfil">
+                                    <img id="preview-image" src="" alt="">
+                                </label>
+                                <input type="file" class="form-control" id="imagen_perfil" name="imagen_perfil" accept="image/*" style="display: none">
                             </div>
                         </div>
                         <div class="row mb-2">
