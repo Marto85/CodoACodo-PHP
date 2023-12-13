@@ -15,7 +15,7 @@
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Quienes somos</a>
+                    <a class="nav-link" href="../views/about_us.php">Quienes somos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>
