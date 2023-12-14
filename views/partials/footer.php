@@ -37,7 +37,7 @@
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Términos y condiciones</a></div>
                         <div><a target="_blank" href="../views/about_us.php" class="menu-buttons px-2">Quienes somos</a></div>
                         <div><a target="_blank" href="../views/privacy.php" class="menu-buttons px-2">Políticas de privacidad</a></div>
-                        <div><a target="_blank" href="..." class="menu-buttons px-2">Defensa al Consumidor</a></div>
+                        <div><a target="_blank" href="../views/customers_rights.php" class="menu-buttons px-2">Defensa al Consumidor</a></div>
                     </div>
                 </div>
                 <hr class="my-2 d-md-none">
