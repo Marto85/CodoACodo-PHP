@@ -36,7 +36,7 @@
                         <div><a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfIUojqIbqBbLTTKqtgtqnenCIWJ-FbWiImk-CVVrPaeCwLoQ/viewform" class="menu-buttons px-2">Ayuda</a></div>
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Términos y condiciones</a></div>
                         <div><a target="_blank" href="../views/about_us.php" class="menu-buttons px-2">Quienes somos</a></div>
-                        <div><a target="_blank" href="..." class="menu-buttons px-2">Políticas de privacidad</a></div>
+                        <div><a target="_blank" href="../views/privacy.php" class="menu-buttons px-2">Políticas de privacidad</a></div>
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Defensa al Consumidor</a></div>
                     </div>
                 </div>
