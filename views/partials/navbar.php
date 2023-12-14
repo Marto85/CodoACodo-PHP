@@ -12,7 +12,7 @@
                     <a class="nav-link active" aria-current="page" href="../views/mailing_list.php">Buscar Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="https://forms.gle/qj9m8QRnADPqAiUHA">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../views/about_us.php">Quienes somos</a>

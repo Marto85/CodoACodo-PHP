@@ -33,7 +33,7 @@
                     <div class="text-center col col-12">
                         <h4 class="px-2 footer-title">Menú:</h4>
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Botón de arrepentimiento</a></div>
-                        <div><a target="_blank" href="..." class="menu-buttons px-2">Ayuda</a></div>
+                        <div><a target="_blank" href="https://forms.gle/qj9m8QRnADPqAiUHA" class="menu-buttons px-2">Ayuda</a></div>
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Términos y condiciones</a></div>
                         <div><a target="_blank" href="../views/about_us.php" class="menu-buttons px-2">Quienes somos</a></div>
                         <div><a target="_blank" href="..." class="menu-buttons px-2">Políticas de privacidad</a></div>

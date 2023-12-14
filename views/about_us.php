@@ -18,15 +18,13 @@
 </head>
 
 <body>
-    <section>
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="title">
-                    <a href="/"><img src="../public/imgs/logos/Eventia-banner.png" alt=""></a>
-                </div>
+    <header>
+        <div class="col-12 text-center">
+            <div class="title">
+                <a href="/"><img class="img-fluid" src="../public/imgs/logos/Eventia-banner.png" alt=""></a>
             </div>
         </div>
-    </section>
+    </header>
     <section class="section faq">
         <div class="container">
             <div class="row">
@@ -36,7 +34,7 @@
                         <p style="text-align: start;">EVENTIA es una empresa argentina independiente con capitales 100% locales y una trayectoria de más de una década en el mercado de la venta de entradas y el entretenimiento en Argentina, Chile, Perú, Colombia, Uruguay y Ecuador. Desde nuestra fundación en 2008, hemos estado ubicados en Buenos Aires y contamos con un equipo de profesionales altamente capacitados y con más de 20 años de experiencia en el sector.
                         </p>
                         <p style="text-align: start; margin-top: 10px;"> En EVENTIA, ofrecemos una amplia gama de servicios de venta de entradas y soluciones de entretenimiento integradas en una única aplicación web-based, que incluyen la venta de entradas, boleterías, kioscos, venta a través de dispositivos móviles, CRM, herramientas de marketing, control de acceso, página web, entre otros.</p>
-                        <p style="text-align: start; margin-top: 10px;"> Nuestra plataforma TuEntrada.com es una solución completa para la venta de entradas, ofreciendo una experiencia de compra fácil, segura y eficiente para el público en general y los organizadores de eventos. Además, también ofrecemos una solución de Servicio de Software (SaaS) como marca blanca para aquellos clientes que buscan una solución personalizada.</p>
+                        <p style="text-align: start; margin-top: 10px;"> Nuestra plataforma es una solución completa para la venta de entradas, ofreciendo una experiencia de compra fácil, segura y eficiente para el público en general y los organizadores de eventos.</p>
                         <p style="text-align: start; margin-top: 10px;"> En EVENTIA, nos enorgullece ser líderes en la industria del entretenimiento en Latinoamérica, y estamos comprometidos en seguir brindando soluciones innovadoras y de calidad a nuestros clientes en el futuro.</p>
                     </div>
                 </div>
@@ -44,15 +42,11 @@
 
         </div>
     </section>
-    <section>
-        <div class="row">
-            <div class="col-12 text-center">
-                <div class="title">
-                    <a href="/"><img src="../public/imgs/logos/Eventia-banner.png" alt=""></a>
-                </div>
-            </div>
+    <footer>
+        <div class="title">
+            <a href="/"><img class= "img-fluid" src="../public/imgs/logos/Eventia-banner.png" alt=""></a>
         </div>
-    </section>
+    </footer>
 </body>
 
 </html>
