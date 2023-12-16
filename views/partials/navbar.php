@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="navbar navbar-expand-lg bg-info fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
@@ -20,6 +23,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>
                 </li>
+                <?php
+                // Verificar si la cookie de usuario está presente
+                if (isset($_COOKIE['user_id']) && !empty($_COOKIE['user_id'])) {
+                    // Obtener el correo electrónico del usuario (suponiendo que esté almacenado en una variable $user_email)
+                    // $user_email = obtener_email_del_usuario(); // Esta función debería obtener el correo electrónico del usuario logueado
+
+                    // Verificar si el correo electrónico del usuario está almacenado en la variable de sesión
+                    if (isset($_SESSION['user_email']) && !empty($_SESSION['user_email'])) {
+                        // Verificar si el correo electrónico termina en "eventia.com"
+                        if (strpos($_SESSION['user_email'], '@eventia.com') !== false) {
+                            // Mostrar un elemento adicional en el nav
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="../views/admin_panel.php">Cargar Eventos</a>';
+                            echo '</li>';
+                        }
+                    }
+                }
+                ?>
             </ul>
             <div class="dropdown">
                 <?php

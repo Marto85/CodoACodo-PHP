@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../models/db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // cookie de sesión vigente 30 minutos
                         $expiryTime = time() + (30 * 60);
                         setcookie("user_id", $conn->insert_id, $expiryTime, "/");
-                        header("Location: ../index.php");
+                        header("Location: ../views/user_profile.php");
                     } else {
                         echo "Error en el registro: " . $stmt->error;
                     }
@@ -76,7 +77,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // cookie de sesión vigente 30 minutos
                 $expiryTime = time() + (30 * 60);
                 setcookie("user_id", $conn->insert_id, $expiryTime, "/");
-                header("Location: ../index.php");
+                $_SESSION['user_email'] = $email;
+                header("Location: ../views/user_profile.php");
             } else {
                 echo "Error en el registro: " . $stmt->error;
             }
@@ -87,4 +89,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Acceso no permitido";
 }
-?>

@@ -1,10 +1,11 @@
 <?php
+session_start();
 include '../models/db_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password"];
-
+    $_SESSION['user_email'] = $email;
     // Validar los datos
     if (empty($email) || empty($password)) {
         echo "Todos los campos son obligatorios";
