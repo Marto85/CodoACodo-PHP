@@ -16,12 +16,16 @@
     margin-right: 10px;
 }
 
-.form-control {
-    border: 1px solid #e10165 !important;
+.search i {
+    cursor: pointer;
 }
 
 .bi-search {
     margin-top: 8px;
+}
+
+.form-control {
+    border: 1px solid #e10165 !important;
 }
 
 .user-icon {

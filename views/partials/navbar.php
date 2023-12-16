@@ -12,13 +12,13 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../views/mailing_list.php">Buscar Eventos</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSfIUojqIbqBbLTTKqtgtqnenCIWJ-FbWiImk-CVVrPaeCwLoQ/viewform">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../views/about_us.php">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../views/faq.php">Preguntas Frecuentes</a>
                 </li>
                 <?php
                 // Verificar si la cookie de usuario está presente
@@ -66,7 +66,6 @@ session_start();
                 }
                 ?>
             </div>
-
 
             <form class="d-flex search" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar evento" aria-label="Search">
