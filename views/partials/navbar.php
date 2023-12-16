@@ -20,9 +20,6 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="../views/about_us.php">Quienes somos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>
-                </li>
                 <?php
                 // Verificar si la cookie de usuario está presente
                 if (isset($_COOKIE['user_id']) && !empty($_COOKIE['user_id'])) {
@@ -34,6 +31,9 @@ session_start();
                         // Verificar si el correo electrónico termina en "eventia.com"
                         if (strpos($_SESSION['user_email'], '@eventia.com') !== false) {
                             // Mostrar un elemento adicional en el nav
+                            echo '<li class="nav-item">';
+                            echo 'a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>';
+                            echo '</li>';
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="../views/admin_panel.php">Cargar Eventos</a>';
                             echo '</li>';
