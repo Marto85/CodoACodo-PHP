@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // cookie de sesion vigente 30 minutos
                 $expiryTime = time() + (30 * 60);
                 setcookie("user_id", $user_id, $expiryTime, "/");
-                header("Location: ../index.php");
+                $_SESSION['user_email'] = $email;
+                header("Location: ../views/user_profile.php");
                 exit();
 
             } else {

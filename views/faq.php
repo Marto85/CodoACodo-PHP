@@ -189,7 +189,7 @@
                                 </h2>
                                 <div id="flush-collapse8" class="accordion-collapse collapse" aria-labelledby="flush-heading8">
                                     <div class="accordion-body">
-                                        Tu Entrada, a través de su sitio web y sus puntos de venta presencial, tiene a cargo la venta oficial y
+                                        Eventia, a través de su sitio web y sus puntos de venta presencial, tiene a cargo la venta oficial y
                                         exclusiva de los eventos que figuran publicados en Eventia Ninguna otra página web, persona
                                         física, empresa o establecimiento que no se encuentre publicado en nuestro sitio web tiene autorización
                                         para realizar la venta de nuestros tickets.

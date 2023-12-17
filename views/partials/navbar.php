@@ -32,7 +32,7 @@ session_start();
                         if (strpos($_SESSION['user_email'], '@eventia.com') !== false) {
                             // Mostrar un elemento adicional en el nav
                             echo '<li class="nav-item">';
-                            echo 'a class="nav-link" href="../views/mailing_list.php">Lista de suscriptores</a>';
+                            echo '<a class="nav-link" href="../views/mailing_list.php">Lista de Suscriptores</a>';
                             echo '</li>';
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="../views/admin_panel.php">Cargar Eventos</a>';
