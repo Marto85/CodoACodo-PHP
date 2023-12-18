@@ -72,7 +72,9 @@
     include '../views/partials/footer.php';
     ?>
     <script src="../public/js/users.js"></script>
-    <script>src="..public/js/events.js"</script>
+    <script>
+        src = "..public/js/events.js"
+    </script>
 </body>
 
 </html>

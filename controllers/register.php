@@ -52,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         setcookie("user_id", $conn->insert_id, $expiryTime, "/");
                         $_SESSION['user_email'] = $email;
                         header("Location: ../views/user_profile.php");
+                        exit();
                     } else {
                         echo "Error en el registro: " . $stmt->error;
                     }
@@ -80,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("user_id", $conn->insert_id, $expiryTime, "/");
                 $_SESSION['user_email'] = $email;
                 header("Location: ../views/user_profile.php");
+                exit();
             } else {
                 echo "Error en el registro: " . $stmt->error;
             }
