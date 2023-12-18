@@ -1,0 +1,7 @@
+1)	Para el 7/10 armar una landing page replicando la que figura como tp integrador o bien reemplazando por lo que querramos (usar otras imágenes, secciones, etc)
+2)	Hacerlo responsive
+3)	Usar bootstrap
+4)	Armar repo y tb alojarlo en repo github
+5)	Estructura: NAV, CARROUSEL, CARDS, IMAGEN CON TEXTO, fORMULARIO y FOOTER
+
+
