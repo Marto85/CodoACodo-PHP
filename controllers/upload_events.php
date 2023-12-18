@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (!in_array($detectedType, $allowedTypes)) {
                     echo "Solo se permiten archivos de imagen JPEG, PNG o WEBP";
                 } else {
-                    $uploadDir = "../public/imgs/events/";
+                    $uploadDir = "../public/imgs/shows/";
                     $path_imagen = $uploadDir . uniqid() . basename($_FILES['path_imagen']['name']);
                     if (move_uploaded_file($_FILES['path_imagen']['tmp_name'], $path_imagen)) {
                         $stmt = $conn->prepare("INSERT INTO eventos (titulo, fecha, lugar, categoria, descripcion, path_imagen, destacado, imperdible) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
