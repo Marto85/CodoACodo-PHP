@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/c4ac9449c7.js" crossorigin="anonymous"></script>
     <title>Eventia</title>
@@ -31,7 +32,7 @@
                         <input type="text" name="titulo" class="form-control" placeholder="Título" required>
                     </div>
                     <div class="mb-3">
-                        <input type="date" name="fecha" class="form-control" placeholder="Fecha" required>
+                        <input type="text" name="fecha" id="fecha" class="form-control" placeholder="Fecha" required>
                     </div>
                     <div class="mb-3">
                         <input type="text" name="lugar" class="form-control" placeholder="Lugar" required>
@@ -68,13 +69,33 @@
         </div>
     </div>
 
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="errorModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php
     include '../views/partials/footer.php';
     ?>
     <script src="../public/js/users.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
     <script>
-        src = "..public/js/events.js"
+        document.addEventListener('DOMContentLoaded', function() {
+            date();
+        });
     </script>
+    <script src="../public/js/events.js"></script>
 </body>
 
 </html>

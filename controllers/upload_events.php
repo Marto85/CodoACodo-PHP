@@ -12,8 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destacado = ($categoria === "ninguno") ? 0 : (isset($_POST['importancia']) && $_POST['importancia'] === "destacado" ? 1 : 0);
     $imperdible = ($categoria === "ninguno") ? 0 : (isset($_POST['importancia']) && $_POST['importancia'] === "imperdible" ? 1 : 0);
 
-    if (empty($titulo) || empty($fecha) || empty($lugar) || empty($categoria) || empty($descripcion) || ($categoria !== "ninguno" && $destacado === 0 && $imperdible === 0)){
-        echo "Todos los campos son obligatorios";
+    $fechaActual = date('Y-m-d');
+    if (empty($titulo) || empty($fecha) || empty($lugar) || empty($categoria) || empty($descripcion) || ($categoria === "ninguno" && isset($_POST['importancia'])) || $fecha < $fechaActual) {
+        $errorMessage = "Todos los campos son obligatorios y la fecha no puede ser anterior a la actual";
+        echo "<script>document.addEventListener('DOMContentLoaded', function() { $('#errorModalBody').text('$errorMessage'); $('#errorModal').modal('show'); });</script>";
     } else {
         if ($_FILES['path_imagen']['error'] == UPLOAD_ERR_OK && !empty($_FILES['path_imagen']['tmp_name'])) {
             $info = getimagesize($_FILES['path_imagen']['tmp_name']);

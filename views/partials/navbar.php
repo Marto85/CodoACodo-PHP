@@ -35,7 +35,7 @@ session_start();
                             echo '<a class="nav-link" href="../views/mailing_list.php">Lista de Suscriptores</a>';
                             echo '</li>';
                             echo '<li class="nav-item">';
-                            echo '<a class="nav-link" href="../views/upload_events.php">Cargar Eventos</a>';
+                            echo '<a class="nav-link" href="../views/upload_events.php">Nuevo Evento</a>';
                             echo '</li>';
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="../views/admin_panel.php">Panel de eventos</a>';

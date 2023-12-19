@@ -31,14 +31,14 @@
   }
 
 .card-container {
-    max-width: 150px !important;
+    max-width: 200px !important;
     max-height: 220px !important;
-    padding: 0px !important;
+    padding: 5px !important;
    
 }
 
 .card-container img {
-    height: 200px;
+    min-height: 175px;
     object-fit: cover;
 }
 

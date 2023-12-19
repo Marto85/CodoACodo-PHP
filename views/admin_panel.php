@@ -42,7 +42,7 @@ $eventos = $conn->query($sql);
                 $eventoId = $evento['id'];
             ?>
                 <div class="card-container">
-                    <div class="card h-75 w-75">
+                    <div class="card h-100 w-100">
                         <img src="<?php echo $imagen; ?>" class="card-img-top" alt="<?php echo $titulo; ?>">
                         <div class="card-body">
                             <p class="card-text"><?php echo $titulo; ?></p>
