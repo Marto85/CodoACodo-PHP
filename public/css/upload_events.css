@@ -17,29 +17,27 @@ h3 {
     min-width: 191.1px;
 }
 
-/* Agrega estilos personalizados para el calendario */
 .ui-datepicker {
     font-size: 14px;
 }
 
 .ui-datepicker-header {
-    background-color: #007bff; /* Cambia el color de fondo del encabezado */
-    color: #ffffff; /* Cambia el color del texto del encabezado */
+    background-color: #007bff;
+    color: #ffffff;
 }
 
 .ui-datepicker-calendar {
-    background-color: #ffffff; /* Cambia el color de fondo del calendario */
+    background-color: #ffffff;
 }
 
 .ui-datepicker-calendar a {
-    color: #000000; /* Cambia el color de los números del calendario */
+    color: #000000;
 }
 
-/* Estilos para los botones de navegación del calendario */
 .ui-datepicker-prev, .ui-datepicker-next {
-    background-color: #007bff; /* Cambia el color de fondo de los botones */
-    color: #ffffff; /* Cambia el color del texto de los botones */
-    border: 1px solid #007bff; /* Añade un borde a los botones */
+    background-color: #007bff;
+    color: #ffffff;
+    border: 1px solid #007bff;
     font-weight: bold;
 }
 
