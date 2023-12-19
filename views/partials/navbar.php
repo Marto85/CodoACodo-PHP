@@ -37,6 +37,9 @@ session_start();
                             echo '<li class="nav-item">';
                             echo '<a class="nav-link" href="../views/upload_events.php">Cargar Eventos</a>';
                             echo '</li>';
+                            echo '<li class="nav-item">';
+                            echo '<a class="nav-link" href="../views/admin_panel.php">Panel de eventos</a>';
+                            echo '</li>';
                         }
                     }
                 }
