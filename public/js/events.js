@@ -26,3 +26,36 @@ function date() {
     });
 }
 
+function previewImage(input) {
+    var preview = document.getElementById('imagen_previa');
+    var file = input.files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        preview.src = reader.result;
+        preview.style.display = 'block';
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = '';
+        preview.style.display = null;
+    }
+}
+
+document.getElementById('path_imagen').addEventListener('change', function () {
+    previewImage(this);
+});
+
+function resetForm() {
+    // Limpiar la vista previa de la imagen
+    document.getElementById('imagen_previa').src = '';
+    document.getElementById('imagen_previa').style.display = 'none';
+
+    // Restablecer el formulario
+    document.getElementById('uploadForm').reset();
+}
+
+
+

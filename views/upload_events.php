@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h3>Cargar evento nuevo</h3>
-                <form action="../controllers/upload_events.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+                <form action="../controllers/upload_events.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()"  id="uploadForm">
                     <div class="mb-3">
                         <input type="text" name="titulo" class="form-control" placeholder="Título" required>
                     </div>
@@ -50,7 +50,8 @@
                         <textarea name="descripcion" class="form-control" placeholder="Descripción" required></textarea>
                     </div>
                     <div class="mb-3">
-                        <input type="file" name="path_imagen" class="form-control" required>
+                        <input type="file" name="path_imagen" id="path_imagen" class="form-control" onchange="previewImage(this);" required>
+                        <img id="imagen_previa" src="#" alt="Vista previa de la imagen" style="display: none; max-width: 100%; max-height: 200px; margin-top: 10px;">
                     </div>
                     <div class="mb-3">
                         <select name="importancia" id="importancia" class="form-select form-control" required>
@@ -61,7 +62,7 @@
                         </select>
                     </div>
                     <div class="mb-3 d-flex justify-content-around">
-                        <button type="reset" class="btn btn-secondary square-btn">Restablecer</button>
+                        <button type="reset" class="btn btn-secondary square-btn" onclick="resetForm()">Restablecer</button>
                         <button type="submit" class="btn btn-primary">Crear evento</button>
                     </div>
                 </form>
