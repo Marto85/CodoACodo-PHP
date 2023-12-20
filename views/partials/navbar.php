@@ -23,9 +23,6 @@ session_start();
                 <?php
                 // Verificar si la cookie de usuario está presente
                 if (isset($_COOKIE['user_id']) && !empty($_COOKIE['user_id'])) {
-                    // Obtener el correo electrónico del usuario (suponiendo que esté almacenado en una variable $user_email)
-                    // $user_email = obtener_email_del_usuario(); // Esta función debería obtener el correo electrónico del usuario logueado
-
                     // Verificar si el correo electrónico del usuario está almacenado en la variable de sesión
                     if (isset($_SESSION['user_email']) && !empty($_SESSION['user_email'])) {
                         // Verificar si el correo electrónico termina en "eventia.com"

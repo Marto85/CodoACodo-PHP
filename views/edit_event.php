@@ -12,7 +12,7 @@ $eventos = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../public/css/index.css" rel="stylesheet">
-    <link href="../public/css/admin_panel.css" rel="stylesheet">
+    <link href="../public/css/event_details.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@300;700&family=Rubik:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
@@ -30,33 +30,9 @@ $eventos = $conn->query($sql);
     include '../views/partials/navbar.php';
     ?>
 
-    <div class="container grand">
-        <div class="section-title">
-            <h3>Administrar <span> Eventos</span></h3>
-        </div>
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 gx-3">
-            <?php
-            foreach ($eventos as $evento) {
-                $titulo = $evento['titulo'];
-                $imagen = $evento['path_imagen'];
-                $eventoId = $evento['id'];
-            ?>
-                <div class="card-container">
-                    <div class="card h-100 w-100">
-                        <img src="<?php echo $imagen; ?>" class="card-img-top" alt="<?php echo $titulo; ?>">
-                        <div class="card-body">
-                            <p class="card-text"><?php echo $titulo; ?></p>
-                            <a href="edit_event.php?id=<?php echo $eventoId; ?>" class="stretched-link"></a>
-                        </div>
-                    </div>
-                </div>
-            <?php
-            }
-            ?>
-        </div>
-    </div>
-</body>
+    
 
+</body>
 <?php
 include '../views/partials/footer.php';
 ?>
