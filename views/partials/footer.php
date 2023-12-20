@@ -1,4 +1,4 @@
-<div class="footer container">
+<div class="footer">
         <div class="row">
             <div class="categories col-sm-6 col-12">
                 <h4 class="footer-title">Categorías:</h4><br>

@@ -132,6 +132,10 @@
     min-width: 100%;
     
 }
+.edit {
+    max-width: none;
+    margin: 0;
+}
 
 .categories, .reserved {
     color: whitesmoke;

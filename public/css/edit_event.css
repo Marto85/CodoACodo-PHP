@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-f {
+    margin-top: 100px !important;
+    margin: 0 auto;
+    padding: 7px;
+    max-width: 500px !important;
+}
