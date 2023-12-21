@@ -39,8 +39,9 @@ function previewImage(input) {
     if (file) {
         reader.readAsDataURL(file);
     } else {
-        preview.src = '';
-        preview.style.display = null;
+        // Si no hay nueva imagen, restablece la vista previa
+        preview.src = '<?php echo $imagen; ?>';
+        preview.style.display = 'block';
     }
 }
 

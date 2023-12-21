@@ -1,9 +1,10 @@
 <?php
+session_start();
 include '../models/db_config.php';
 
-// Verifica si se proporciona un ID válido en la URL
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $eventoId = $_GET['id'];
+// Verifica si se proporciona un ID válido a través del formulario POST
+if (isset($_POST['evento_id']) && is_numeric($_POST['evento_id'])) {
+    $eventoId = $_POST['evento_id'];
 
     // Consulta para obtener los detalles del evento
     $sql = "SELECT * FROM eventos WHERE id = $eventoId";
@@ -43,13 +44,15 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto:wght@300;700&family=Rubik:wght@400;600&family=Young+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.6/dist/flatpickr.min.js"></script>
     <script src="https://kit.fontawesome.com/c4ac9449c7.js" crossorigin="anonymous"></script>
     <title>Eventia</title>
 </head>
+
 
 <body>
     <?php
@@ -74,7 +77,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             <label for="lugar" class="form-label">Lugar</label>
                             <input type="text" name="lugar" class="form-control" value="<?php echo $lugar; ?>" required>
                             <div class="mb-3">
-                                <!-- <label for="path_imagen" class="form-label">Imagen Actual</label> -->
                                 <img src="<?php echo $imagen; ?>" alt="Imagen actual" style="max-width: 100%; height: auto;">
                             </div>
                             <div class="mb-3">
@@ -83,7 +85,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                             </div>
                             <div class="mb-3">
                                 <select name="categoria" class="form-select form-control" required>
-                                    <option value="" disabled selected>Categoría</option>
+                                    <option value="" disabled>Categoría</option>
                                     <option value="musica" <?php echo ($categoria === 'musica') ? 'selected' : ''; ?>>Música</option>
                                     <option value="teatro" <?php echo ($categoria === 'teatro') ? 'selected' : ''; ?>>Teatro</option>
                                     <option value="deportes" <?php echo ($categoria === 'deportes') ? 'selected' : ''; ?>>Deportes</option>
@@ -91,9 +93,15 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
                                     <option value="otros" <?php echo ($categoria === 'otros') ? 'selected' : ''; ?>>Otros</option>
                                 </select>
                             </div>
+
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label">Descripcion</label>
+                                <textarea name="descripcion" class="form-control" required><?php echo $descripcion; ?></textarea>
+                            </div>
+
                             <div class="mb-3">
                                 <select name="importancia" class="form-select form-control" required>
-                                    <option value="" disabled selected>Importancia</option>
+                                    <option value="" disabled>Importancia</option>
                                     <option value="ninguno" <?php echo ($importancia === 'ninguno') ? 'selected' : ''; ?>>Ninguno</option>
                                     <option value="destacado" <?php echo ($importancia === 'destacado') ? 'selected' : ''; ?>>Destacado</option>
                                     <option value="imperdible" <?php echo ($importancia === 'imperdible') ? 'selected' : ''; ?>>Imperdible</option>

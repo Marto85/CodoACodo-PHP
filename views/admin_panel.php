@@ -46,7 +46,10 @@ $eventos = $conn->query($sql);
                         <img src="<?php echo $imagen; ?>" class="card-img-top" alt="<?php echo $titulo; ?>">
                         <div class="card-body">
                             <p class="card-text"><?php echo $titulo; ?></p>
-                            <a href="edit_event.php?id=<?php echo $eventoId; ?>" class="stretched-link"></a>
+                            <form action="../views/edit_event.php" method="POST">
+                                <input type="hidden" name="evento_id" value="<?php echo $eventoId; ?>">
+                                <button type="submit" class="stretched-link" style="border: none; background: none; padding: 0; margin: 0; cursor: pointer;"></button>
+                            </form>
                         </div>
                     </div>
                 </div>
