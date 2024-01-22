@@ -9,7 +9,7 @@ function validateForm() {
 
 function date() {
     flatpickr("#fecha", {
-        dateFormat: 'd-m-Y',
+        dateFormat: 'Y-m-d',
         locale: {
             buttonText: {
                 today: 'Hoy'

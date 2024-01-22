@@ -14,6 +14,10 @@ if (isset($_POST['evento_id']) && is_numeric($_POST['evento_id'])) {
         $evento = $resultado->fetch_assoc();
         $titulo = $evento['titulo'];
         $fecha = $evento['fecha'];
+
+        echo "Fecha recuperada: $fechaFormateada";
+        $fechaFormateada = date('Y-m-d', strtotime($fecha));
+        var_dump($fechaFormateada);
         $lugar = $evento['lugar'];
         $categoria = $evento['categoria'];
         $descripcion = $evento['descripcion'];
@@ -73,7 +77,7 @@ if (isset($_POST['evento_id']) && is_numeric($_POST['evento_id'])) {
                         </div>
                         <div class="mb-3">
                             <label for="fecha" class="form-label">Fecha</label>
-                            <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $fecha; ?>" required>
+                            <input type="date" name="fecha" id="fecha" class="form-control" value="<?php echo $fechaFormateada; ?>" required>
                             <label for="lugar" class="form-label">Lugar</label>
                             <input type="text" name="lugar" class="form-control" value="<?php echo $lugar; ?>" required>
                             <div class="mb-3">
