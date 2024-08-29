@@ -77,6 +77,10 @@
     border-bottom: 1px solid grey;
 }
 
+.outstanding {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
 .btn-buy-event {
     background-color: #e10165;
     border-radius: 5px;
